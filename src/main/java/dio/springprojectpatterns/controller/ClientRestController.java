@@ -7,11 +7,13 @@ import org.springframework.web.bind.annotation.*;
 
 import dio.springprojectpatterns.service.ClientService;
 
+
 @RestController
 @RequestMapping("clients")
+
 public class ClientRestController {
 
-    @Autowired
+    @Autowired(required = false)
     private ClientService clientService;
 
     @GetMapping
@@ -38,3 +40,5 @@ public class ClientRestController {
         return ResponseEntity.ok().build();
     }
 }
+
+

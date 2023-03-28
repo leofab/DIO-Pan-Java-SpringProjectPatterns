@@ -3,6 +3,7 @@ package dio.springprojectpatterns.service.impl;
 import dio.springprojectpatterns.model.Client;
 import dio.springprojectpatterns.service.ClientService;
 
+
 public class ClientServiceImpl  implements ClientService {
     @Override
     public Iterable<Client> findAll() {
@@ -12,6 +13,12 @@ public class ClientServiceImpl  implements ClientService {
     @Override
     public Client findById(Long id) {
         return null;
+    }
+
+    @Override
+    public Client add(Client client) {
+
+        return client;
     }
 
     @Override

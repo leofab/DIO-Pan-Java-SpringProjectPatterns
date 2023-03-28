@@ -32,11 +32,17 @@
 		</dependency>
 		<!-- OpenAPI/Swagger -->
 
-
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-ui</artifactId>
 			<version>1.6.15</version>
+		</dependency>
+
+		<!-- Hibernate Validator-->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>5.2.4.Final</version>
 		</dependency>
 
 		<dependency>
