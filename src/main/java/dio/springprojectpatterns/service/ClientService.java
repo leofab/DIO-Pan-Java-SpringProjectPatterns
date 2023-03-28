@@ -10,7 +10,7 @@ public interface ClientService {
 
     Client findById(Long id);
 
-    void insert(Client client);
+    void add(Client client);
 
     void update(Long id, Client client);
 
