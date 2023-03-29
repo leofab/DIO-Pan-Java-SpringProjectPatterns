@@ -37,6 +37,19 @@ public class ClientServiceImpl implements ClientService {
         saveClientWithCep(client);
     }
 
+    @Override
+    public void update(Long id, Client client) {
+        Optional<Client> client2 = clientRepo.findById(id);
+        if(client2.isPresent()){
+            saveClientWithCep(client);
+        }
+    }
+
+    @Override
+    public void delete(Long id) {
+        clientRepo.deleteById(id);
+    }
+
     private void saveClientWithCep(Client client) {
         String cep = client.getAdress().getCep();
         Adress adress = adressRepo.findById(cep).orElseGet(() -> {
@@ -47,19 +60,5 @@ public class ClientServiceImpl implements ClientService {
 
         client.setAdress(adress);
         clientRepo.save(client);
-    }
-
-
-    @Override
-    public void update(Long id, Client client) {
-        Optional<Client> client2 = clientRepo.findById(id);
-        if(client2.isPresent()){
-
-        }
-    }
-
-    @Override
-    public void delete(Long id) {
-
     }
 }
