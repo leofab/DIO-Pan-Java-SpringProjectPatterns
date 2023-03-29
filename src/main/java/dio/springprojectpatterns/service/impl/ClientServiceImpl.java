@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.Optional;
 
 
-public class ClientServiceImpl  implements ClientService {
+public class ClientServiceImpl implements ClientService {
 
     @Autowired
     private ClientRepo clientRepo;
@@ -42,17 +42,14 @@ public class ClientServiceImpl  implements ClientService {
         });
 
         client.setAdress(adress);
+        clientRepo.save(client);
         return client;
     }
 
-    @Override
-    public void insert(Client client) {
-
-    }
 
     @Override
     public void update(Long id, Client client) {
-
+        Optional<Client> client2 = clientRepo.findById(id);
     }
 
     @Override
