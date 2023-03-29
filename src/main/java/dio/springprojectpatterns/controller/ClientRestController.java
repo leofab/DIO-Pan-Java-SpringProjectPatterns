@@ -18,7 +18,7 @@ public class ClientRestController {
     @Autowired(required = false)
     private ClientService clientService;
 
-    @GetMapping
+    @GetMapping("/")
     public ResponseEntity<Iterable<Client>> findAll() {
         return ResponseEntity.ok(clientService.findAll());
     }
@@ -26,7 +26,7 @@ public class ClientRestController {
     public ResponseEntity<Optional<Client>> findById(@PathVariable Long id) {
         return ResponseEntity.ok(clientService.findById(id));
     }
-    @PostMapping
+    @PostMapping("/")
     public ResponseEntity<Client> add(@RequestBody Client client) {
         clientService.add(client);
         return ResponseEntity.ok(client);

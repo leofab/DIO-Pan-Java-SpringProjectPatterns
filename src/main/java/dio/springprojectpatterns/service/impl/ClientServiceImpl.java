@@ -32,9 +32,10 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public void add(Client client) {
+    public Client add(Client client) {
         // Buscar o id da pessoa que no AdressRepo é o cep
         saveClientWithCep(client);
+        return client;
     }
 
     @Override

@@ -1,18 +1,20 @@
 package dio.springprojectpatterns.service;
 
 import dio.springprojectpatterns.model.Client;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
+@Component
 public interface ClientService {
 
     Iterable<Client> findAll();
 
     Optional<Client> findById(Long id);
 
-    void add(Client client);
+    Client add(Client client);
 
     void update(Long id, Client client);
 
