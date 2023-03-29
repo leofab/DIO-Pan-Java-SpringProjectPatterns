@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.*;
 
 import dio.springprojectpatterns.service.ClientService;
 
+import java.util.Optional;
+
 
 @RestController
 @RequestMapping("clients")
@@ -21,7 +23,7 @@ public class ClientRestController {
         return ResponseEntity.ok(clientService.findAll());
     }
     @GetMapping("/{id}")
-    public ResponseEntity<Client> findById(@PathVariable Long id) {
+    public ResponseEntity<Optional<Client>> findById(@PathVariable Long id) {
         return ResponseEntity.ok(clientService.findById(id));
     }
     @PostMapping

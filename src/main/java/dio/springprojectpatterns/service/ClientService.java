@@ -3,12 +3,14 @@ package dio.springprojectpatterns.service;
 import dio.springprojectpatterns.model.Client;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public interface ClientService {
 
     Iterable<Client> findAll();
 
-    Client findById(Long id);
+    Optional<Client> findById(Long id);
 
     Client add(Client client);
 
