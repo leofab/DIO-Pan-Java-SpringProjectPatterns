@@ -12,7 +12,7 @@ public interface ClientService {
 
     Optional<Client> findById(Long id);
 
-    Client add(Client client);
+    void add(Client client);
 
     void update(Long id, Client client);
 
